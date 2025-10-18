@@ -20,7 +20,8 @@
     <!-- HEADER -->
     <header class="header">
         <h1 class="hero-title">xavi_lwl</h1>
-        <nav class="nav-links">
+        <!-- FIXED TOP NAVBAR -->
+        <nav class="top-bar">
             <a href="#about">About</a>
             <a href="#gallery">Gallery</a>
         </nav>
@@ -33,22 +34,31 @@
         </div>
         <div class="about-text">
             <h2>Hello! I'm Xavi</h2>
-            <p>
-                Me a artist. Me a animator. Me crazy.
-            </p>
+            <p>Me a artist. Me a animator. Me crazy.</p>
         </div>
     </section>
 
-    <!-- HORIZONTAL SEPARATOR -->
-    <hr class="separator">
-
     <!-- GALLERY SECTION -->
     <section id="gallery" class="gallery">
-        <div class="art-item"><img src="assets/Portifolio/Character desein/Post Rat Boy.jpg" alt="Art 1"></div>
-        <div class="art-item"><img src="assets/Portifolio/Fanarts/Gigi Murin 2.jpg" alt="Art 2"></div>
-        <div class="art-item"><img src="assets/Portifolio/Fanarts/Sabá pela boat.jpg" alt="Art 3"></div>
-        <div class="art-item"><img src="assets/Portifolio/Fanarts/Teto vocaloid.jpg" alt="Art 4"></div>
-        <div class="art-item"><img src="assets/Portifolio/Fanarts/gura v2.jpg" alt="Art 5"></div>
+        <!-- Category Boxes -->
+         <div class="category-box" data-category="characters" style="background-image: url('assets/Portifolio/Character desein/Post Rat Boy.jpg');">
+            <div class="box-overlay">Character Design</div>
+        </div>
+        <div class="category-box" data-category="fanarts" style="background-image: url('assets/Portifolio/Fanarts/Sabá pela boat.jpg');">
+            <div class="box-overlay">Fanarts</div>
+        </div>
+        <div class="category-box" data-category="animations" style="background-image: url('assets/Portifolio/Bad Bet/13.png');">
+            <div class="box-overlay">Animations</div>
+        </div>
+        <div class="category-box" data-category="projects" style="background-image: url('assets/Portifolio/Bad Bet/Artfight karpos.jpg');">
+            <div class="box-overlay">Other projects</div>
+        </div>
+
+        <!-- Hidden gallery -->
+        <div class="hidden-gallery" aria-hidden="true">
+            <button class="back-btn">← Back</button>
+            <div class="hidden-gallery-track"></div>
+        </div>
     </section>
 
     <!-- FOOTER -->
