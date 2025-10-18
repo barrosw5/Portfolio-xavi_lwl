@@ -1,8 +1,8 @@
 /* ====== GLOBAL STYLES ====== */
 body {
-    font-family: 'BBH Sans Bartle', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
-    background-color: #0d0d0d;
+    background-color: #ffe4c1;
     color: #fff;
 }
 
@@ -39,7 +39,7 @@ body {
 }
 
 .nav-links a {
-    color: #bbb;
+    color: #704214;
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.1rem;
@@ -47,12 +47,12 @@ body {
 }
 
 .nav-links a:hover {
-    color: #fff;
+    color: #ff7e5f;
     transform: scale(1.1);
 }
 
 .nav-links a.active {
-    color: #ff7e5f;
+    color: #704214;
 }
 
 /* ====== GALLERY ====== */
@@ -111,7 +111,7 @@ body {
 }
 
 .about-text h2 {
-    font-family: 'BBH Sans Bartle', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: #ff7e5f;
     font-size: 2rem;
     font-weight: 400;
@@ -120,9 +120,30 @@ body {
 
 .about-text p {
     font-family: 'Noto Sans', sans-serif;
-    color: #ccc;
+    color: #704214;
     font-size: 1.1rem;
     line-height: 1.6;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+}
+
+.footer a {
+    color: #704214; /* mesma cor da navbar */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer a:hover {
+    color: #ff7e5f; /* mesma cor hover da navbar */
+    transform: scale(1.1);
 }
 
 
