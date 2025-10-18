@@ -33,7 +33,8 @@ const categoryMap = {
     characters: [
         'assets/Portifolio/Character desein/Post Rat Boy.jpg',
         'assets/Portifolio/Character desein/Mode sheet Com roupa,sem.cores.jpg',
-        'assets/Portifolio/Character desein/pose.sheet (1).png',
+        'assets/Portifolio/Character desein/Sem Título-1.jpg',
+        'assets/Portifolio/Character desein/Teste de cores.png'
     ],
     fanarts: [
         'assets/Portifolio/Fanarts/Fubuki.jpg',
@@ -43,12 +44,21 @@ const categoryMap = {
         'assets/Portifolio/Fanarts/gura v2.jpg'
     ],
     animations: [
-        'assets/Portifolio/Bad Bet/13.png',
-        'assets/Portifolio/Bad Bet/14.png'
+        'assets/Portifolio/Volei Animação.mp4'
     ],
     projects: [
+        'assets/Portifolio/Bad Bet/cartaz_v5.jpg',
         'assets/Portifolio/Bad Bet/Artfight karpos.jpg',
-        'assets/Portifolio/Bad Bet/OtherProject.jpg'
+        'assets/Portifolio/Bad Bet/cenário 1_v4.png',
+        'assets/Portifolio/Bad Bet/cenario 2 _v2.png',
+        'assets/Portifolio/Bad Bet/Color script entrada com karpos.png',
+        'assets/Portifolio/Bad Bet/Cadeira.png',
+        'assets/Portifolio/Bad Bet/13.png',
+        'assets/Portifolio/Bad Bet/24.png',
+        'assets/Portifolio/Bad Bet/27.png',
+        'assets/Portifolio/Bad Bet/Cena 1.mp4',
+        'assets/Portifolio/Bad Bet/Cena 2.mp4',
+        'assets/Portifolio/Bad Bet/Cena05_v1.mp4'
     ]
 };
 
