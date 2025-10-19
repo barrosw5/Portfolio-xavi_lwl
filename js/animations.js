@@ -1,12 +1,11 @@
 window.addEventListener('load', () => {
-    // Select the hero title
+    // === Hero Title Animation ===
     const title = document.querySelector(".hero-title");
     
     if (title) {
-        // Split the text into individual letters
+        // Split the text into letters
         title.innerHTML = title.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
     
-        // Animate each letter
         gsap.from(".letter", {
             duration: 1,
             y: 80,
@@ -19,6 +18,19 @@ window.addEventListener('load', () => {
             duration: 1.5, 
             opacity: 1, 
             ease: "power3.out" 
+        });
+    }
+
+    // === Category Boxes Animation ===
+    const boxes = document.querySelectorAll('.category-box');
+    if (boxes.length > 0) {
+        gsap.from(boxes, {
+            duration: 0.8,
+            opacity: 0,
+            y: 40,
+            stagger: 0.15,
+            ease: "power3.out",
+            delay: 0.6 // começa depois do título
         });
     }
 });
@@ -44,7 +56,7 @@ const categoryMap = {
         'assets/Portifolio/Fanarts/gura v2.jpg'
     ],
     animations: [
-        'assets/Portifolio/Volei Animação.mp4'
+        'assets/Portifolio/Animations/Volei Animação.mp4'
     ],
     projects: [
         'assets/Portifolio/Bad Bet/cartaz_v5.jpg',
