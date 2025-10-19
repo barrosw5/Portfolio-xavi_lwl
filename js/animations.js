@@ -152,7 +152,7 @@ const categoryMap = {
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'assets/Portifolio/Bad Bet/Cena 2.mp4',
+            src: 'assets/Portifolio/Bad Bet/cena 2.mp4',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
