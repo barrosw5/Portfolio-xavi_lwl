@@ -318,6 +318,18 @@ body {
     color: rgba(255, 255, 255, 0.8);
     pointer-events: none;
 }
+/* dont grab videos */
+.hidden-gallery img,
+.hidden-gallery video,
+.art-expanded-left img,
+.art-expanded-left video {
+    -webkit-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+}
 
 .art-expanded-right {
     flex: 0 0 30%;

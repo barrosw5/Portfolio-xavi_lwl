@@ -210,11 +210,11 @@ async function showGallery(category) {
     history.pushState({ gallery: true }, '', '#gallery');
     isGalleryOpen = true;
 
-    for (const item of items) { // for...of suporta await
+    for (const item of items) {
         const artItem = document.createElement('div');
         artItem.classList.add('art-item');
 
-        const isVideo = item.src.endsWith('.mp4');
+        const isVideo = item.src.toLowerCase().endsWith('.mp4');
         if (isVideo) artItem.classList.add('video');
 
         const thumb = document.createElement('img');
@@ -225,7 +225,7 @@ async function showGallery(category) {
                 thumb.src = await getVideoThumbnail(item.src);
             } catch (err) {
                 console.error(err);
-                thumb.src = 'assets/video-placeholder.png'; // fallback
+                thumb.src = 'assets/video-placeholder.png';
             }
         } else {
             thumb.src = encodeURI(item.src);
@@ -268,23 +268,37 @@ function showExpandedArt(item) {
     if (!artExpanded) return;
 
     const artExpandedLeft = artExpanded.querySelector('.art-expanded-left');
-    artExpandedLeft.innerHTML = ''; // limpa conteúdo anterior
+    artExpandedLeft.innerHTML = '';
 
-    const isVideo = item.src.endsWith('.mp4');
+    const isVideo = item.src.toLowerCase().endsWith('.mp4');
 
     if (isVideo) {
         const video = document.createElement('video');
         video.src = item.src;
         video.controls = true;
-        video.autoplay = true;
+        // Permitir fullscreen, bloquear download e PiP
+        video.setAttribute('controlsList', 'nodownload noremoteplayback');
+        video.disablePictureInPicture = true;
+        video.draggable = false;
         video.style.maxWidth = '100%';
         video.style.maxHeight = '80vh';
         video.style.borderRadius = '12px';
+        video.setAttribute('playsinline', '');
+        
+        // Bloquear clique direito
+        video.addEventListener('contextmenu', (e) => e.preventDefault());
+        video.addEventListener('dragstart', (e) => e.preventDefault());
+
         artExpandedLeft.appendChild(video);
     } else {
         const img = document.createElement('img');
         img.src = item.src;
         img.alt = item.title || '';
+        img.draggable = false;
+        img.addEventListener('contextmenu', (e) => e.preventDefault());
+        img.style.maxWidth = '100%';
+        img.style.maxHeight = '80vh';
+        img.style.borderRadius = '12px';
         artExpandedLeft.appendChild(img);
     }
 
@@ -297,6 +311,9 @@ function showExpandedArt(item) {
     gsap.fromTo(artExpanded, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" });
     artExpanded.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+// Bloqueio global clique-direito na galeria
+hiddenGallery.addEventListener('contextmenu', e => e.preventDefault());
 
 categoryBoxes.forEach(box => {
     box.addEventListener('click', () => {
