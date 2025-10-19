@@ -302,6 +302,23 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
+/* Overlay play para vídeos */
+.art-item.video {
+    position: relative;
+    cursor: pointer;
+}
+
+.art-item.video::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+}
+
 .art-expanded-right {
     flex: 0 0 30%;
     font-family: 'Noto Sans', sans-serif;

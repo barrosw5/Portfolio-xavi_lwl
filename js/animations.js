@@ -93,7 +93,7 @@ const categoryMap = {
             description: 'Pintura digital baseada num ambiente noturno relaxante.'
         }
     ],
-    animation: [
+    animations: [
         { 
             src: 'assets/Portifolio/Animations/Volei Animação.mp4',
             title: 'Sabá pela Boat',
@@ -170,33 +170,71 @@ const artTitle = artExpanded.querySelector('.art-title');
 const artDescription = artExpanded.querySelector('.art-description');
 
 
+function getVideoThumbnail(videoSrc) {
+    return new Promise((resolve, reject) => {
+        const video = document.createElement('video');
+        video.src = videoSrc;
+        video.crossOrigin = 'anonymous'; // útil se estiver em HTTP
+        video.muted = true;
+        video.playsInline = true;
+        video.currentTime = 0;
+
+        video.addEventListener('loadeddata', () => {
+            video.currentTime = 0; // garante que o primeiro frame está pronto
+        });
+
+        video.addEventListener('seeked', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const dataURL = canvas.toDataURL('image/png');
+            resolve(dataURL);
+        });
+
+        video.addEventListener('error', () => reject('Erro ao carregar vídeo: ' + videoSrc));
+    });
+}
+
 function clearHiddenGallery() {
     // remove only the art items inside the track
     hiddenTrack.querySelectorAll('.art-item').forEach(el => el.remove());
 }
 
-function showGallery(category) {
-    hideExpandedArt(); // já tinhas isto
-    const images = categoryMap[category] || [];
+async function showGallery(category) {
+    hideExpandedArt();
+    const items = categoryMap[category] || [];
     clearHiddenGallery();
 
-    // Atualiza o histórico: adiciona um novo estado
     history.pushState({ gallery: true }, '', '#gallery');
-
     isGalleryOpen = true;
 
-    images.forEach(art => {
+    for (const item of items) { // for...of suporta await
         const artItem = document.createElement('div');
         artItem.classList.add('art-item');
 
-        const img = document.createElement('img');
-        img.src = encodeURI(art.src);
-        img.alt = art.title || '';
+        const isVideo = item.src.endsWith('.mp4');
+        if (isVideo) artItem.classList.add('video');
 
-        img.addEventListener('load', () => {
+        const thumb = document.createElement('img');
+        thumb.alt = item.title || '';
+
+        if (isVideo) {
+            try {
+                thumb.src = await getVideoThumbnail(item.src);
+            } catch (err) {
+                console.error(err);
+                thumb.src = 'assets/video-placeholder.png'; // fallback
+            }
+        } else {
+            thumb.src = encodeURI(item.src);
+        }
+
+        thumb.addEventListener('load', () => {
             const targetHeight = Math.min(400, Math.round(window.innerHeight * 0.6));
-            const naturalW = img.naturalWidth;
-            const naturalH = img.naturalHeight;
+            const naturalW = thumb.naturalWidth;
+            const naturalH = thumb.naturalHeight;
 
             if (naturalW && naturalH) {
                 const computedWidth = Math.round((naturalW / naturalH) * targetHeight);
@@ -210,16 +248,15 @@ function showGallery(category) {
             gsap.to(artItem, { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" });
         });
 
-        artItem.appendChild(img);
+        artItem.appendChild(thumb);
         hiddenTrack.appendChild(artItem);
-        artItem.addEventListener('click', () => showExpandedArt(art));
-    });
+
+        artItem.addEventListener('click', () => showExpandedArt(item));
+    }
 
     hiddenGallery.classList.add('active');
     hiddenGallery.setAttribute('aria-hidden', 'false');
     categoryBoxes.forEach(b => b.style.display = 'none');
-
-    gsap.fromTo('.art-item', { y: 20, opacity: 0, scale: 0.95 }, { y: 0, opacity: 1, scale: 1, duration: 0.5, stagger: 0.08, ease: "power3.out" });
 }
 
 function hideExpandedArt() {
@@ -227,20 +264,37 @@ function hideExpandedArt() {
     artExpanded.setAttribute('aria-hidden', 'true');
 }
 
-function showExpandedArt(art) {
+function showExpandedArt(item) {
     if (!artExpanded) return;
 
-    artImg.src = art.src;
-    artTitle.textContent = art.title || '';
-    artDescription.textContent = art.description || '';
+    const artExpandedLeft = artExpanded.querySelector('.art-expanded-left');
+    artExpandedLeft.innerHTML = ''; // limpa conteúdo anterior
+
+    const isVideo = item.src.endsWith('.mp4');
+
+    if (isVideo) {
+        const video = document.createElement('video');
+        video.src = item.src;
+        video.controls = true;
+        video.autoplay = true;
+        video.style.maxWidth = '100%';
+        video.style.maxHeight = '80vh';
+        video.style.borderRadius = '12px';
+        artExpandedLeft.appendChild(video);
+    } else {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.title || '';
+        artExpandedLeft.appendChild(img);
+    }
+
+    artTitle.textContent = item.title || '';
+    artDescription.textContent = item.description || '';
 
     artExpanded.classList.add('active');
     artExpanded.setAttribute('aria-hidden', 'false');
 
-    // animação suave de fade-in
     gsap.fromTo(artExpanded, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" });
-
-    // scroll suave até ao painel
     artExpanded.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
