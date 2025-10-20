@@ -454,4 +454,22 @@ body {
     .category-box, .hidden-gallery .art-item { max-width: 90%; }
     .box-overlay { font-size: 1rem; padding: 0.6rem 0; }
     .hidden-gallery .art-item { width: 200px; }
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .footer-right {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #704214;
+    }
+    .footer a {
+        font-size: 1.3rem;
+        margin: 0 10px;
+    }
 }
