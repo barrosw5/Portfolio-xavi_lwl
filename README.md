@@ -2,7 +2,7 @@
 
 A minimal and modern portfolio website made for **[Xavi_LWL](https://www.instagram.com/xavi_lwl/)** — an artist showcasing his creative work online.
 
-🔗 **Live Site:** [portfolio-xavilwl.vercel.app](https://portfolio-xavilwl.vercel.app/)
+🔗 **Live Site:** [xavilwl.vercel.app](https://portfolio-xavilwl.vercel.app/)
 
 ---
 
