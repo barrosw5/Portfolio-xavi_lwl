@@ -55,7 +55,7 @@ const categoryMap = {
             description: 'Design de moda com variações de trajes e expressões.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024326/Sem_T%C3%ADtulo-1_bq5xeg.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769033059/sem_titulo-1_nnrpgd.jpg',
             title: 'Sem Título 1',
             description: 'Exploração de forma e cor sem contexto definido.'
         },
@@ -77,7 +77,7 @@ const categoryMap = {
             description: 'Interpretação colorida de uma personagem de anime popular.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024329/Saba%CC%81_pela_boat_qxptjg.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769033183/saba_pela_boat_mjxifh.jpg',
             title: 'Sabá pela Boat',
             description: 'Pintura digital baseada num ambiente noturno relaxante.'
         },
@@ -111,7 +111,7 @@ const categoryMap = {
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024324/cen%C3%A1rio_1_v4_xerm6n.png',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769033337/cenario_1_v4_umyd3t.png',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
