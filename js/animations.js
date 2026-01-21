@@ -46,117 +46,117 @@ const backBtn = document.querySelector('.back-btn');
 const categoryMap = {
     characters: [
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024325/Post_Rat_Boy_zswm2w.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024325/Post_Rat_Boy_zswm2w.jpg',
             title: 'Post Rat Boy',
             description: 'Personagem principal de uma série experimental sobre a vida urbana.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024326/Mode_sheet_Com_roupa_sem.cores_kd85hw.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024326/Mode_sheet_Com_roupa_sem.cores_kd85hw.jpg',
             description: 'Design de moda com variações de trajes e expressões.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769033059/sem_titulo-1_nnrpgd.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769033059/sem_titulo-1_nnrpgd.jpg',
             title: 'Sem Título 1',
             description: 'Exploração de forma e cor sem contexto definido.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024327/Teste_de_cores_q5u8mf.png',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024327/Teste_de_cores_q5u8mf.png',
             title: 'Teste de Cores',
             description: 'Estudo cromático para futuras composições digitais.'
         }
     ],
     fanarts: [
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024328/Fubuki_xhcaje.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024328/Fubuki_xhcaje.jpg',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024330/Gigi_Murin_2_ceb5vy.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024330/Gigi_Murin_2_ceb5vy.jpg',
             title: 'Gigi Murin',
             description: 'Interpretação colorida de uma personagem de anime popular.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769033183/saba_pela_boat_mjxifh.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769033183/saba_pela_boat_mjxifh.jpg',
             title: 'Sabá pela Boat',
             description: 'Pintura digital baseada num ambiente noturno relaxante.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024330/Teto_vocaloid_hlztsm.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024330/Teto_vocaloid_hlztsm.jpg',
             title: 'Sabá pela Boat',
             description: 'Pintura digital baseada num ambiente noturno relaxante.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024330/gura_v2_rsiyrt.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024330/gura_v2_rsiyrt.jpg',
             title: 'Sabá pela Boat',
             description: 'Pintura digital baseada num ambiente noturno relaxante.'
         }
     ],
     animations: [
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/video/upload/f_auto,q_auto/v1769024318/Volei_Anima%C3%A7%C3%A3o_sfeamf.mp4',
+            src: 'https://res.cloudinary.com/dhvqxlksv/video/upload/f_auto/q_auto/v1769024318/Volei_Anima%C3%A7%C3%A3o_sfeamf.mp4',
             title: 'Sabá pela Boat',
             description: 'Pintura digital baseada num ambiente noturno relaxante.'
         }
     ],
     projects: [
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024323/cartaz_v5_ixburf.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024323/cartaz_v5_ixburf.jpg',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024320/Artfight_karpos_ch9cyu.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024320/Artfight_karpos_ch9cyu.jpg',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769033337/cenario_1_v4_umyd3t.png',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769033337/cenario_1_v4_umyd3t.png',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024324/cenario_2__v2_nzqqsv.png',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024324/cenario_2__v2_nzqqsv.png',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024320/Color_script_entrada_com_karpos_c0jmc3.png',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024320/Color_script_entrada_com_karpos_c0jmc3.png',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024319/Cadeira_zm2grw.png',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024319/Cadeira_zm2grw.png',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024319/13_jg0qc8.png',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024319/13_jg0qc8.png',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024319/24_rn0wjy.png',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024319/24_rn0wjy.png',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024320/27_phrba4.png',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto/q_auto/v1769024320/27_phrba4.png',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/video/upload/f_auto,q_auto/v1769024331/Cena_1_spjfqj.mp4',
+            src: 'https://res.cloudinary.com/dhvqxlksv/video/upload/f_auto/q_auto/v1769024331/Cena_1_spjfqj.mp4',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/video/upload/f_auto,q_auto/v1769024324/cena_2_u4brvw.mp4',
+            src: 'https://res.cloudinary.com/dhvqxlksv/video/upload/f_auto/q_auto/v1769024324/cena_2_u4brvw.mp4',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         },
         { 
-            src: 'https://res.cloudinary.com/dhvqxlksv/video/upload/f_auto,q_auto/v1769024320/Cena05_v1_akc6bp.mp4',
+            src: 'https://res.cloudinary.com/dhvqxlksv/video/upload/f_auto/q_auto/v1769024320/Cena05_v1_akc6bp.mp4',
             title: 'Fubuki',
             description: 'Fanart inspirada no universo de One Punch Man.'
         }
