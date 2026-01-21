@@ -46,7 +46,7 @@ const backBtn = document.querySelector('.back-btn');
 const categoryMap = {
     characters: [
         { 
-            src: 'assets/Portifolio/Character desein/Post Rat Boy.jpg',
+            src: 'https://res.cloudinary.com/dhvqxlksv/image/upload/f_auto,q_auto/v1769024325/Post_Rat_Boy_zswm2w.jpg',
             title: 'Post Rat Boy',
             description: 'Personagem principal de uma série experimental sobre a vida urbana.'
         },
